@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 16px;
+    background-color: gray;
+    color: white;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.schedule {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 
+    [tracks] auto
+    [time-0800] 1fr
+    [time-0830] 1fr
+    [time-0900] 1fr
+    [time-0930] 1fr
+    [time-1000] 1fr
+    [time-1030] 1fr
+    [time-1100] 1fr
+    [time-1130] 1fr
+    [time-1200] 1fr;
+  grid-template-columns:
+    [times] 4em
+    [track-1-start] 1fr
+    [track-1-end track-2-start] 1fr
+    [track-2-end track-3-start] 1fr
+    [track-3-end track-4-start] 1fr
+    [track-4-end];
+}
+
+.track-names {
+    grid-row: tracks;
+    position: sticky;
+}
+
+.track-name-1 {
+    grid-column: track-1;
+}
+.track-name-2 {
+    grid-column: track-2;
+}
+.track-name-3 {
+    grid-column: track-3;
+}
+.track-name-4 {
+    grid-column: track-4;
+}
+
+.session {
+    padding: 1rem;
+}
+.session a, .session span{
+    color: gray;
+    display: block;
+}
+
+.track-1 {
+    background: #D6FFF3;
+    grid-column: track-1-start;
+}
+
+.track-2 {
+    background: #C5E0D8;
+    grid-column: track-1-end / track-2-start;
+}
+.track-3 {
+    background: #C9C9C9;
+    grid-column: track-2-end / track-3-start;
+}
+.track-4 {
+    background: #CEABB1;
+    grid-column: track-3-end / track-4-start;
+}
+
+.session-1 {
+    grid-row: time-0800 / time-0900;
+}
+.session-2 {
+    grid-row: time-0800 / time-0900;
+}
+.session-3 {
+    grid-row: time-0800 / time-0830;
+}
+.session-4 {
+    grid-row: time-0800 / time-0900;
+}
+
+.session-5 {
+    grid-row: time-0900 / time-1000;
+}
+.session-6 {
+    grid-row: time-0900 / time-1000;
+    grid-column: track-1-end / track-4-start;
+}
+.session-7 {
+    grid-row: time-0830 / time-0900;
+}
+.session-8 {
+    grid-row: time-0900 / time-1000;
+}
+.session-9 {
+    grid-row: time-1000 / time-1100;
+    grid-column: track-1-start / track-4-end;
+}
+
+.session-10, .session-11, .session-12, .session-13 {
+    grid-row: time-1100 / time-1200;
+}
+
+.time-slot-0800 {
+   grid-column: times;
+   grid-row: time-0800;
+}
+
+.time-slot-0900 {
+   grid-column: times;
+   grid-row: time-0900;
+}
+
+.time-slot-1000 {
+   grid-column: times;
+   grid-row: time-1000;
+}
+
+.time-slot-1100 {
+   grid-column: times;
+   grid-row: time-1100;
+}
